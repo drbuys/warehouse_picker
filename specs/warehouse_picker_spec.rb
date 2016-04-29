@@ -13,6 +13,8 @@ class TestWarehouse < Minitest::Test
     assert_equal('b5', bay)
   end
 
-  def 
+  def
+    
+  end
 
 end

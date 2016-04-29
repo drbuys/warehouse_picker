@@ -1,4 +1,5 @@
 
+INVENTORY =
 
 
 def item_at_bay(bay)
