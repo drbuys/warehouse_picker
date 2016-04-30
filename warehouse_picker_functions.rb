@@ -100,6 +100,15 @@ def distance_given_bays(string_of_bays)
 end
 
 def distance_given_items(string_of_items)
-  items = string_of_items.split(", ")
+  bays = list_of_items(string_of_items).split(", ") #return an array
   numbers = []
+  bays_string = ""
+  for x in bays
+    numbers << index_for_bay(x)
+  end
+  numbers = numbers.sort
+  for x in numbers
+    bays_string += INVENTORY[x].keys[0].to_s + ", "
+  end
+  return bays_string[0...-2]
 end

@@ -78,6 +78,7 @@ Further Tasks - not required
 
 given "b5, b10, and b6", determine that the products are "nail filer, cookie jar, and tooth paste", and they're five bays apart
 given "b3, c7, c9 and a3", determine that the products are "picture frame, paint brush, shoe lace, and blouse", and they're 15 bays apart.)
+
 6) Given a list of products, find the bays that need to be visited, and order them in the order they need to be visited from entrance to exit. For instance:
 
 given "shoe lace, rusty nail, leg warmers", determine that those items need to be collected from "c1, c9, and c10"
