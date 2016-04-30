@@ -14,13 +14,19 @@ class TestWarehouse < Minitest::Test
   # end
 
   # def test_list_of_bays()
-  #   bays = list_of_bays("b5, b10, b6")
-  #   assert_equal("nail filer, cookie jar, tooth paste are 5 bays apart", bays)
+  # bays = list_of_bays("b5, b10, b6")
+  # assert_equal("nail filer, cookie jar, tooth paste", bays)
+  # #   assert_equal("nail filer, cookie jar, tooth paste are 5 bays apart", bays)
+  # end
+  #
+  # def test_list_of_items()
+  #   items = list_of_items("shoe lace, rusty nail, leg warmers")
+  #   assert_equal("c9, c1, c10", items)
   # end
 
-  def test_list_of_items()
-    items = list_of_items("shoe lace, rusty nail, leg warmers")
-    assert_equal("c9, c1, c10", items)
+  def test_distance_given_bays
+    items_and_distance = distance_given_bays("b5, b10, b6")
+    assert_equal(5, bays)
   end
 
 end
