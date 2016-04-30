@@ -43,17 +43,6 @@ def item_at_bay(bay)
   return value
 end
 
-def index_for_bay(bay)
-  for x in INVENTORY
-    if x.has_key?(bay.to_sym)
-      return index = INVENTORY.index(x)
-    end
-  end
-  return index
-end
-
-puts index_for_bay('a10')
-
 def bay_for_item(item)
   for x in INVENTORY
     if x.has_value?(item)
@@ -61,6 +50,33 @@ def bay_for_item(item)
     end
   end
   return key
+end
+
+def list_of_bays(string_of_bays)
+  bays = string_of_bays.split(", ")
+  items = ""
+  for x in bays
+    items += item_at_bay(x) + ", "
+  end
+  return items[0...-2]
+end
+
+def list_of_items(string_of_items)
+  items = string_of_items.split(", ")
+  bays = ""
+  for x in items
+    bays += bay_for_item(x) + ", "
+  end
+  return bays[0...-2]
+end
+
+def index_for_bay(bay)
+  for x in INVENTORY
+    if x.has_key?(bay.to_sym)
+      return index = INVENTORY.index(x)
+    end
+  end
+  return index
 end
 
 def index_for_item(item)
@@ -72,45 +88,18 @@ def index_for_item(item)
   return index
 end
 
-puts index_for_item('nail filer')
-
-def list_of_bays(string_of_bays)
+def distance_given_bays(string_of_bays)
   bays = string_of_bays.split(", ")
   numbers = []
-  items = ""
   for x in bays
-    items += item_at_bay(x) + ", "
-  #   numbers << x.split(//, 2)[1].to_i
-  # end
+    numbers << index_for_bay(x)
   end
-
-  # item_list = "#{items}, and they are #{distance} apart!"
-  # distance = numbers.max - numbers.min
-  # item_list = "#{items[0...-2]} are #{distance} bays apart"
-  # return item_list
-  return items[0...-2]
+  distance = numbers.max - numbers.min
+  item_list = "#{list_of_bays(string_of_bays)} are #{distance} bays apart"
+  return item_list
 end
 
-
-def list_of_items(string_of_items)
+def distance_given_items(string_of_items)
   items = string_of_items.split(", ")
-  bays = ""
-  for x in items
-    bays += bay_for_item(x) + ", "
-  end
-  return bays[0...-2]
-end
-
-def distance_given_bays(string_of_bays)
-  # list = list_of_bays(string_of_bays).split(", ")
-  # arr = []
-
-  # for x in INVENTORY
-  #   #binding.pry
-  #   if x.has_value?(list)
-  #     arr << x.index(list)
-  #   end
-  # end
-  # value = arr.max - arr.min
-  # return value
+  numbers = []
 end

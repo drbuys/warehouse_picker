@@ -24,9 +24,39 @@ class TestWarehouse < Minitest::Test
   #   assert_equal("c9, c1, c10", items)
   # end
 
-  def test_distance_given_bays
-    items_and_distance = distance_given_bays("b5, b10, b6")
-    assert_equal(5, bays)
+  # def test_index_for_item()
+  #   index = index_for_bay("c2")
+  #   assert_equal(11, index)
+  # end
+  #
+  # def test_index_for_bay()
+  #   index = index_for_item("nail filer")
+  #   assert_equal(24, index)
+  # end
+
+  # #this is the first test for Q5
+  # def test_distance_given_bays()
+  #   bays = distance_given_bays("b5, b10, b6")
+  #   assert_equal("nail filer, cookie jar, tooth paste are 5 bays apart", bays)
+  # end
+
+  #  #this is the 2nd test for Q5
+  #  def test_distance_given_bays()
+  #    bays = distance_given_bays("b3, c7, c9, a3")
+  #    assert_equal("picture frame, paint brush, shoe lace, blouse are 15 bays apart", bays)
+  #  end
+
+  # this is the first test for Q6
+  def test_distance_given_items()
+    items = distance_given_items("shoe lace, rusty nail, leg warmers")
+    assert_equal("c1, c9, c10")
   end
+
+  # # this is the second test for Q6
+  # def test_distance_given_items()
+  #   items = distance_given_items("hanger, deodorant, candy wrapper, rubber band")
+  #   assert_equal("a10, a4, c8, b9")
+  # end
+
 
 end
