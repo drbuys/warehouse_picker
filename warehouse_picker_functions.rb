@@ -90,7 +90,7 @@ end
 # => given "shoe lace, rusty nail, leg warmers", determine that those items need to be collected from "c1, c9, and c10"
 # => given "hanger, deodorant, candy wrapper, rubber band", determine that those items need to be collected from "a10, a4, c8, and b9"
 def distance_given_items(string_of_items)
-  bays = list_of_items(string_of_items).split(", ") #return an array
+  bays = list_of_items(string_of_items).split(", ") #returns an array
   numbers = []
   bays_string = ""
   for x in bays
